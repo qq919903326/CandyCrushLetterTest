@@ -1,0 +1,32 @@
+server:
+  port: 8080
+  undertow:
+    threads:
+      io: 16
+      worker: 256
+    buffer-size: 1024
+    direct-buffers: true
+  servlet:
+    context-path: /front
+jackson:
+  default-property-inclusion: non_null
+spring:
+  application:
+    name: candy-crush-letter-front
+  aop:
+    auto: true
+    proxy-target-class: false
+    jackson:
+      date-format: yyyy-MM-dd HH:mm:ss
+      time-zone: GMT+8
+  redis:
+    timeout: 10000
+    jedis:
+      pool:
+        max-active: 100
+        max-idle: 20
+        max-wait: -1
+        min-idle: 1
+logging:
+  level:
+    root: info
