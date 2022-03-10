@@ -61,6 +61,42 @@
                     </ul>
                 </div><!-- End Input Your Home Content Here -->
             </div> <!-- end container -->
+
+            <!-- form -->
+            <div style="padding: 20px;border: 1px solid #aaaaaa;margin: auto;color: white;font-weight: bold;" class="container">
+                <div style="text-align: center;line-height: 50px;">
+                    <input name="fruit" type="radio" value="1" checked />Stage 1
+                    <input name="fruit" type="radio" value="2" />Stage 2
+                </div>
+                <div style="text-align: center;display: flex;line-height: 50px;">
+                    <div>
+                        <span>input：</span>
+                        <input id="str" type="text" style="width: 200px;height: 35px; margin-right: 50px;color: #5e5e5e;padding: 5px;" value="" placeholder="请输入字符串">
+                    </div>
+                    <div>
+                        <span>相邻重复最小数：</span>
+                        <input id="num" type="text" style="width: 200px;height: 35px; margin-right: 50px;color: #5e5e5e;padding: 5px;" value="" placeholder="请输入数字">
+                    </div>
+                    <div>
+                        <button style="height: 37px;background-color: #5cb85c;line-height: 30px;width: 100px;border: 1px solid;border-radius: 3px;" id="doBtn">确定</button>
+                    </div>
+                </div>
+            </div>
+            <!-- end form -->
+
+            <!-- popup -->
+            <div style="position: fixed;left: 0;top: 0;background-color: #333333ab;width: 100%;height: 100%;z-index: 999;display: none;" class="popup closePopup"></div>
+            <div style="display: block;position: fixed;left: 20%;top: 100px;width: 60%;height: 50%;z-index: 9999;background-color: #ffffff;display: none;" class="popup">
+                <div style="text-align:right;padding: 2px 15px;font-size: 24px;background-color: #eee;">
+                    <label>关闭结果集：</label><a href="javascript:;" class="closePopup">×</a>
+                </div>
+                <div style="margin: 5px 10px;">
+                    <ul id="u">
+
+                    </ul>
+                </div>
+            </div>
+            <!-- end popup -->
             <div class="container"> <!-- container -->
                 <div class="content-heading text-center"> <!-- Input Your Home Content Here -->
                     <h1>#Stage 2 - advanced requirement</h1>
@@ -75,9 +111,6 @@
                     </ul>
                 </div><!-- End Input Your Home Content Here -->
             </div> <!-- end container -->
-            <div class="container"> <!-- container -->
-                <a href="#works" class="scroll goto-btn">Download Resume</a> <!-- Link to your portfolio section -->
-            </div>
         </div><!-- End Overlay Color -->
     </section>
 

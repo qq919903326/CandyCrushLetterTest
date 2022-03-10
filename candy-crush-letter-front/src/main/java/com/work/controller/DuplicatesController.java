@@ -8,16 +8,21 @@ import com.work.handle.StringAlgorithmHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 
 @Slf4j
 @Validated
-@Controller
-@RequestMapping("/")
-public class MainController {
+@RestController
+@RequestMapping("/duplicates")
+public class DuplicatesController {
 
     /**
      * 移除相邻重复字符
@@ -33,7 +38,7 @@ public class MainController {
         if(optional.isPresent()){
             return ApiResultGenerator.success(optional.get());
         }
-        return ApiResultGenerator.error(ApiResultCodeMsg.NOT_FOUND,new ArrayList<>());
+        return ApiResultGenerator.success(null);
     }
     /**
      * 替换相邻重复字符
@@ -44,14 +49,10 @@ public class MainController {
     @GetMapping("/replacedDuplicates/{str}/{num}")
     public ApiResult replacedDuplicates(@PathVariable String str,@PathVariable Integer num){
         log.info("请求参数：{},{}",str,num);
-        Optional<List<String>> optional = StringAlgorithmHandler.removeDuplicates(str,num);
+        Optional<List<String>> optional = StringAlgorithmHandler.replacedDuplicates(str,num);
         if(optional.isPresent()){
             return ApiResultGenerator.success(optional.get());
         }
         return ApiResultGenerator.error(ApiResultCodeMsg.NOT_FOUND,new ArrayList<>());
-    }
-    @RequestMapping("/index")
-    public String thymeleaf() {
-        return "example/index";
     }
 }
