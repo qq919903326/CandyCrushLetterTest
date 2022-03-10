@@ -1,0 +1,9 @@
+.odd{
+    background: gray;
+}
+.even{
+    background: yellow;
+}
+table tr td{
+    text-align: center;
+}

@@ -4,6 +4,7 @@ public enum ApiResultCodeMsg {
     SUCCESS(200, "success"),//成功
     FAIL(400, "fail"),//失败
     UNAUTHORIZED(401, "unauthorized"),//未认证（签名错误）
+    NOT_FOUND(405, "not found"),//没有数据
     BAD_PARAMETER(205, "The input parameter errors"),//输入参数错误
     INTERNAL_SERVER_ERROR(500, "server internal error");//服务器内部错误
 
